@@ -1,0 +1,99 @@
+# Compiled Binary directories
+bin/
+obj/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Log files
+*.log
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# Rider project files
+.idea/
+*.sln.iml
+
+# Visual Studio Code settings
+.vscode/
+
+# Auto-generated AssemblyInfo files
+AssemblyInfo.cs
+
+# DotNet Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+.env
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# NuGet Packages
+*.nupkg
+packages/
+*.snupkg
+
+# Azure Pipelines
+.ionide/
+
+# JetBrains Rider
+.idea/
+
+# File-based package management
+global.json
+.nuget/
+packages.config
+*.sln.dotSettings
+
+# Resharper
+_ReSharper*/
+*.DotSettings.user
+
+# Mac files
+*.DS_Store
+
+# Database files
+*.mdf
+*.ldf
+
+# Runtime files
+*.vs/
+
+# Logs and cache
+**/*.log
+.npm/
+node_modules/
+**/*.map
+
+# Publish outputs
+publish/
+.publish/
+
+# Entity Framework Migrations
+Migrations/
+
+# Temporary files
+*.tmp
+*.temp
+
+# Compiled output
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.mdb
+
+# Rider settings
+.idea/
+*.sln.iml
+
+# Local environment variables
+.env
