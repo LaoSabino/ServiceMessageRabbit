@@ -1,3 +1,6 @@
+# Ignorar a pasta .vs (configurações locais do Visual Studio)
+.vs/
+
 # Compiled Binary directories
 bin/
 obj/
