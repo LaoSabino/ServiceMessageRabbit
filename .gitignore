@@ -2,5 +2,12 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
+/.vs/WebApplication1/DesignTimeBuild/.dtbcache.v2
+/.vs/WebApplication1/FileContentIndex/1efff989-99ae-41fd-bcd1-2342d07b8b3d.vsidx
+/.vs/WebApplication1/FileContentIndex/21fc53b4-1faa-4541-a70a-18af80f502eb.vsidx
+/.vs/WebApplication1/FileContentIndex/85126104-c0c7-4a2d-99ab-889d702a1c9e.vsidx
+/.vs/WebApplication1/v17/.futdcache.v2
+/.vs/WebApplication1/v17/.suo
+/.vs/WebApplication1/v17/DocumentLayout.json
 /.vs/WebApplication1/FileContentIndex
 /.vs/WebApplication1/v17
