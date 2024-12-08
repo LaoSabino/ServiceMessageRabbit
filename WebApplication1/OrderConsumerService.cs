@@ -5,22 +5,13 @@ using System.Text.Json;
 
 namespace WebApplication1;
 
-public class OrderConsumerService : BackgroundService
+public class OrderConsumerService(ConnectionFactoryBuilder connectionFactoryBuilder) : BackgroundService
 {
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
     {
-        var factory = new ConnectionFactory()
-        {
-            HostName = "172.17.0.3",
-            Port = 5672,
-            UserName = "guest",
-            Password = "guest",
-            RequestedConnectionTimeout = TimeSpan.FromSeconds(10),  // Timeout mais longo
-            AutomaticRecoveryEnabled = true,  // Habilita reconexão automática
-            NetworkRecoveryInterval = TimeSpan.FromSeconds(5)
-        };
-        using IConnection conn = await factory.CreateConnectionAsync();
-        using IChannel _channel = await conn.CreateChannelAsync();
+        var factory = connectionFactoryBuilder.Build();
+        using IConnection conn = await factory.CreateConnectionAsync(stoppingToken);
+        using IChannel _channel = await conn.CreateChannelAsync(cancellationToken: stoppingToken);
         _ = await _channel.QueueDeclareAsync(queue: "orders", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
         var consumer = new AsyncEventingBasicConsumer(_channel);
