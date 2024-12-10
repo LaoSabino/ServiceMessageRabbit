@@ -1,17 +1,17 @@
-﻿namespace WebApplication1;
-
+﻿using Microsoft.Extensions.Options;
 using RabbitMQ.Client;
-using System;
 
-public class ConnectionFactoryBuilder
+namespace WebApplication1;
+
+public class ConnectionFactoryBuilder(IOptions<RabbitMqOptions> rabbitMqOptions)
 {
-    private string _hostName = "172.17.0.3";
-    private int _port = 5672;
-    private string _userName = "guest";
-    private string _password = "guest";
-    private TimeSpan _requestedConnectionTimeout = TimeSpan.FromSeconds(10);
-    private bool _automaticRecoveryEnabled = true;
-    private TimeSpan _networkRecoveryInterval = TimeSpan.FromSeconds(5);
+    private string _hostName = rabbitMqOptions.Value.HostName;
+    private int _port = rabbitMqOptions.Value.Port;
+    private string _userName = rabbitMqOptions.Value.UserName;
+    private string _password = rabbitMqOptions.Value.Password;
+    private TimeSpan _requestedConnectionTimeout = rabbitMqOptions.Value.RequestedConnectionTimeout;
+    private bool _automaticRecoveryEnabled = rabbitMqOptions.Value.AutomaticRecoveryEnabled;
+    private TimeSpan _networkRecoveryInterval = rabbitMqOptions.Value.NetworkRecoveryInterval;
 
     public ConnectionFactoryBuilder SetHostName(string hostName)
     {
