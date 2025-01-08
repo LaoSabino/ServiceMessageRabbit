@@ -19,6 +19,10 @@ public class OrderService(ConnectionFactoryBuilder connectionFactoryBuilder) : I
         var props = new BasicProperties
         {
             ContentType = "text/plain",
+            ,mlkn
+            dmknllscdnl
+            dmkcvlnscv
+            çvdmçn
             DeliveryMode = DeliveryModes.Persistent,
             Headers = new Dictionary<string, object?>()
         };
