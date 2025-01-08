@@ -15,7 +15,7 @@ public class OrderService(ConnectionFactoryBuilder connectionFactoryBuilder) : I
         await _channel.QueueDeclareAsync(queue: "orders", durable: false, exclusive: false, autoDelete: false, arguments: null);
         var message = JsonSerializer.Serialize(order);
         var body = Encoding.UTF8.GetBytes(message);
-        Console.WriteLine(body);
+
         var props = new BasicProperties
         {
             ContentType = "text/plain",
